@@ -1,0 +1,52 @@
+# elhost.kv
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Create Server'
+            on_release:
+                app.root.current = 'create_server'
+
+<CreateServerScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: server_name
+            hint_text: 'Server Name'
+        TextInput:
+            id: ram
+            hint_text: 'RAM (MB)'
+        TextInput:
+            id: cpu
+            hint_text: 'CPU (%)'
+        TextInput:
+            id: server_type
+            hint_text: 'Paper or Spigot'
+        Button:
+            text: 'Create Server'
+            on_release:
+                root.create_server()
+
+<ServerManagementScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Console'
+            on_release:
+                # Implement console access
+        Button:
+            text: 'Start Server'
+            on_release:
+                root.start_server()
+        Button:
+            text: 'Restart Server'
+            on_release:
+                root.restart_server()
+        Button:
+            text: 'Stop Server'
+            on_release:
+                root.stop_server()
+        Button:
+            text: 'Files'
+            on_release:
+                # Implement file directory access
